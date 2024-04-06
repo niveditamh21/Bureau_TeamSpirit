@@ -1,0 +1,43 @@
+{
+"mti": "0100",
+"processingCode": "000000",
+"transactionAmount": "000000000.00",
+"dateTimeTransaction": "2412192200",
+"cardholderBillingConversionRate": "61000000",
+"stan": "13244",
+"timeLocalTransaction": "192200",
+"dateLocalTransaction": "2412",
+"expiryDate": "2306",
+"conversionDate": "0911",
+"merchantCategoryCode": "5969",
+"posEntryMode": "810",
+"acquiringInstitutionCode": "013992",
+"forwardingInstitutionCode": "001695",
+"rrn": "1122033441",
+"cardAcceptorTerminalId": "8999840",
+"cardAcceptorId": "89050840 ",
+"cardAcceptorNameLocation": "NETFLIXUS",
+"cardBalance": "0000000000.00",
+"additionalData48": "T",
+"transactionCurrencyCode": "840",
+"cardholderBillingCurrencyCode": "840",
+"posDataCode": "102510800600084063368",
+"originalDataElement": "01001324424121922000000001399200000001695", "channel": "ECOM",
+"encryptedPan": "Kg1WR6lwTruEPIDK0GS4w82/wrFeXTU5SjD9TfyUXmc=", "network": "MASTER",
+"dcc": false,
+"kitNo": "1020001031",
+"factorOfAuthorization": 0,
+"authenticationScore": 0,
+"contactless": false,
+"international": true,
+"preValidated": false,
+
+"enhancedLimitWhiteListing": false, "transactionOrigin": "ECOM", "transactionType": "ECOM", "isExternalAuth": false, "encryptedHexCardNo":
+
+"2a0d5647a9704ebb843c80cad064b8c3cdbfc2b15e5d35394a30fd4dfc945e67", "isTokenized": false,
+"entityId": "EKCZSH8MA5",
+"moneySendTxn": false,
+
+"mcRefundTxn": false, "mpqrtxn": false, "authorisationStatus": true, "latitude": "28.644800", "longitude":"77.216721"
+
+}
