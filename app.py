@@ -37,6 +37,7 @@ class GetPredictionOutput(Resource):
         except Exception as error:
             return {'error': error}
 
+
 api.add_resource(Test,'/')
 api.add_resource(GetPredictionOutput,'/getPredictionOutput')
 
