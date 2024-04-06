@@ -1,9 +1,10 @@
 import pandas as pd
 import math
 import json
-
+import pickle
 def predict_mpg(config):
     try:
+        ruleViolated = []
         # Convert the input to a JSON string if it's not already
         if isinstance(config, dict):
             config = json.dumps(config)
@@ -17,11 +18,16 @@ def predict_mpg(config):
         # Assuming these are the methods of your model to check rule 001 and 002
         y_pred_1 = check_rule_001(df)
         y_pred_2 = check_rule_002(df, df['entityId'][0])  # Assuming entityId is unique for each transaction
-
-        if y_pred_1 or y_pred_2:
-            return 'fraud'
+        y_pred_3 =  check3(config)
+        if y_pred_1: 
+            ruleViolated.append("RULE-001")
+        
+        elif y_pred_2 :
+            ruleViolated.append("RULE-002")
+        elif df['merchantCategoryCode'][0] == "9565":
+            ruleViolated.append("RULE-004")
         else:
-            return 'not fraud'
+            ruleViolated.append("RULE-003")
 
     except Exception as e:
         return f'Error: {str(e)}'
@@ -144,3 +150,21 @@ def check_rules(json_data):
         'rule_001': rule_001_result,
         'rule_002': rule_002_result
     }
+
+
+def check3(config):
+    pkl_filename = "model.pkl"
+    with open(pkl_filename, 'rb') as f_in:
+        model = pickle.load(f_in)
+
+    if type(config) == dict:
+        df = pd.DataFrame(config)
+    else:
+        df = config
+    
+    y_pred = model.predict(df)
+
+    if y_pred==-1:
+        return True
+    else:
+        return False
